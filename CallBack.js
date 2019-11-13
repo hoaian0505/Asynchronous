@@ -1,29 +1,36 @@
 
 //Bất đồng bộ dùng Async-CallBack
-var Timeout;
+var Timeout1;
 
 function printNumber(number, callback){
+  if (number==3)
+    Timeout1=10000;
+  else if (number==4)
+    Timeout1=1000;
+  else if (number==5)
+    Timeout1=2000;
   setTimeout(
     function(){
       console.log(number)
-      if (number==2)
-        Timeout=10000;
-      else if (number==3)
-        Timeout=1000;
-      else if (number==4)
-        Timeout=2000;
       callback()
     },
-    Timeout
+    Timeout1
   )
 }
  
 function printNumber2(number){
+  if (number==3)
+    Timeout1=10000;
+  else if (number==4)
+    Timeout1=1000;
+  else if (number==5)
+    Timeout1=2000;
   setTimeout(
     function(){
       console.log(number)
     },
-    Math.floor(Math.random() * 1000) + 1
+    //Math.floor(Math.random() * 1000) + 1
+    Timeout1
   )
 }
 
@@ -40,7 +47,7 @@ function printAll(){
   })
 }
 
-printAll();
+//printAll();
 
 function printAll2(){
   printNumber2(1);
@@ -50,4 +57,4 @@ function printAll2(){
   printNumber2(5);
 }
 
-//printAll2();
+printAll2();

@@ -1,7 +1,13 @@
 //Bất đồng bộ dùng Async-Await
-var Timeout;
+var Timeout1;
 
   function printNumber(number){
+    if (number==3)
+      Timeout1=10000;
+    else if (number==4)
+      Timeout1=1000;
+    else if (number==5)
+      Timeout1=2000;
     return new Promise((resolve, reject) => {
       setTimeout(
         function(){
@@ -12,15 +18,8 @@ var Timeout;
                 resolve()
             }
 
-            if (number==2)
-            Timeout=10000;
-          else if (number==3)
-            Timeout=1000;
-          else if (number==4)
-            Timeout=2000;
-            
         },
-        Timeout 
+        Timeout1
        //Math.floor(Math.random() * 1000) + 1
       )
     })
@@ -33,4 +32,15 @@ var Timeout;
     await printNumber(4);
     await printNumber(5);
   }
+
   printAll();
+
+  function printAll2(){
+    printNumber(1);
+    printNumber(2);
+    printNumber(3);
+    printNumber(4);
+    printNumber(5);
+  }
+
+  //printAll2();
